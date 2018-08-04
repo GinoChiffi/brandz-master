@@ -1,0 +1,26 @@
+<div class="center">
+<%= link_to 'Brands', brands_index_path %>
+</div>
+
+<div id="articles" class="transitions-enabled">
+    <% @designers.each do |designer| %>
+    <div class="box panel panel-default">
+      <%= image_tag designer.avatar.url(:thumb) %>
+      <div class="panel-body">
+      <strong>Designer: </strong><%= designer.name %></br>
+     <strong>Bio: </strong> <%= designer.bio %></br>
+      <strong>Brand: </strong><%= designer.brand.name %></br>
+
+        <%= link_to 'Show', designer_path(designer) %></br>
+        <% if designer.brand == current_brand %>
+        <%= link_to 'Edit', edit_designer_path(designer) %>
+        <%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end%>
+      </div>
+      </div>
+      <% end %>
+    </div>
+
+
+
+

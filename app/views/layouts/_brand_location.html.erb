@@ -1,0 +1,16 @@
+<div class="center">
+  <% if brand_signed_in? %>
+      <%= link_to  raw('<span class="glyphicon glyphicon-plus"></span>Add Store'), new_location_path %>
+  <%end%>
+</div>
+
+<% if @brand.locations %>
+  <% @brand.locations.each do |location| %>
+    <%= location.address %></br>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{location.latitude}%2C#{location.longitude}" %>
+    <%= link_to 'Edit', edit_location_path(location) %>
+   <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%end %>
+<%end%>
+
+

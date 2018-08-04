@@ -1,0 +1,11 @@
+ <div class="center titles">
+    <h3>Populaire Merken</h3>
+    </div>
+
+    <div id="brands_popular" class="transitions-enabled">
+      <% @brands.all.sort_by(&:followers_count).reverse.each do |brand| %>
+          <div class="brandpopularbox panel panel-default">
+              <%= link_to image_tag(brand.logo.url(:medium)),brand_path(brand.name) %>
+            </div>
+         <%end%>
+       </div>

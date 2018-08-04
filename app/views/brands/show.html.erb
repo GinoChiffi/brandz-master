@@ -1,0 +1,55 @@
+   <%= render 'layouts/followbutton' %>
+
+    <div class="row">
+      <div class="col-4">
+      <div class="card">
+         <%= image_tag @brand.logo, class: 'card-img-top' %>
+        <div class="card-body">
+          <h3><%= @brand.name %></h3>
+            <p>Antwerp, Belgium</p>
+          <p><%= @brand.email %></p>
+          <p><%= @brand.phone %></p>
+          <p><%= @brand.url %></p>
+          <i class="fab fa-facebook fa-2x"></i>
+          <i class="fab fa-instagram fa-2x"></i>
+          <i class="fab fa-youtube fa-2x"></i>
+          <p>VAT BE 0668 615 852</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <h3>Story</h3>
+          <%= simple_format(@brand.brand_description) %>
+        </div>
+      </div>
+    </div>
+      <div class="col-offset-4 col-8 ">
+  <div class="card-columns">
+      <% @brand.notifications.each do |notification| %>
+      <div class="card">
+        <% if notification.image?%>
+          <%= image_tag notification.image, class: 'card-img-top'%>
+        <%end%>
+          <div class="card-body">
+            <div class="card-title"><h5><%= notification.title %></h5></div>
+            <div class="card-text"><%= notification.description %></div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  </div>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+

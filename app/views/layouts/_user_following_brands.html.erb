@@ -1,0 +1,11 @@
+<h3>Currently following <%= current_user.follows.count%> brands</h3></br>
+
+<div id="articles" class="transitions-enabled">
+    <% @brands.each do |brand|%>
+    <div class="box panel panel-default">
+       <%= link_to image_tag(brand.logo.url(:medium)), brand_path(brand.name)%></br>
+    </div>
+  <% end %>
+  </div>
+</div>
+

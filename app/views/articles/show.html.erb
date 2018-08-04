@@ -1,0 +1,26 @@
+<%= link_to 'Back', :back %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @article.image.url %>
+      </div>
+      <div class="panel-body">
+            <strong><%= @article.brand.name%></strong>
+
+            <p>
+              <strong>Description:</strong>
+              <%= @article.description %>
+            </p>
+
+            <% if @article.brand == current_brand %>
+              <%= link_to  raw('<span class="glyphicon glyphicon-edit"></span>Edit'), edit_article_path(@article) %>
+               <%= link_to  raw('<span class="glyphicon glyphicon-trash"></span>Delete'), @article, method: :delete, data: { confirm: 'Are you sure?' }  %>
+            <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+

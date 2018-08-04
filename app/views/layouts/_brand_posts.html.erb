@@ -1,0 +1,23 @@
+      <div class="col-xs-4">
+      <% @brand.notifications.each do |notification| %>
+
+        <div class="panel panel-default">
+        <div class="panel-header">
+                <%= image_tag notification.brand.logo.url(:thumb) %>
+                </div>
+                <div class="panel-body">
+              <%if notification.image? %>
+                <%= image_tag notification.image %>
+              <%end %>
+                <h1><%= notification.title %></h1>
+                <p>Posted by: <%= notification.brand.name %></p>
+                <p><%= notification.description.truncate(120) %></p>
+                 <% if brand_signed_in? %>
+              <%= link_to 'Edit', edit_notification_path(notification), class: "btn btn-info" %>
+              <%= link_to 'Delete', @notification, method: :delete, data: { confirm: "Are you sure?"},class: "btn btn-danger" %>
+              <%end%>
+              </div>
+        </div>
+
+      <% end %>
+</div>

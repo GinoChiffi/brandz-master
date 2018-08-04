@@ -1,0 +1,13 @@
+
+    <% current_user.notifications.each do |notification| %>
+        <% if current_user.voted_up_on? notification %>
+          <%= link_to raw('<span class="glyphicon glyphicon-heart"></span>'), unlike_notification_path(notification), method: :put%>
+        <% else%>
+          <%= link_to raw('<span class="glyphicon glyphicon-heart-empty"></span>'), like_notification_path(notification), method: :put%>
+        <% end%>
+        <span><%= notification.get_upvotes.size%></span>
+    <% end %>
+
+
+
+

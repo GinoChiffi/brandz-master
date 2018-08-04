@@ -1,0 +1,43 @@
+// Place all the styles related to the brands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#brand_contact_section{
+  display: none;
+}
+
+#brand_story_section{
+  display: none;
+}
+
+.brand_profile_pic {
+  float: left;
+  margin-bottom: -50px;
+}
+
+.brand_profile_pic img{
+}
+
+.brand_profile_name {
+  float: left;
+  margin-left: 20px;
+}
+
+.nav-tabs.nav-justified li a{
+border-bottom: 1px solid #fde9eb;
+color: black;
+font-weight: bold;
+}
+
+.nav-tabs.nav-justified li a:hover{
+background-color: #fde9eb;
+}
+
+.nav-tabs.nav-justified li a:visited{
+background-color: #fde9eb;
+}
+
+.nav-tabs.nav-justified li a:active{
+background-color: #fde9eb;
+}
+
+

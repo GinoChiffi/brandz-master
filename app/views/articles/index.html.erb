@@ -1,0 +1,13 @@
+
+<div id="articles" class="transitions-enabled">
+    <% @articles.each do |article| %>
+        <div class="box panel panel-default">
+            <%= link_to image_tag(article.image.url(:medium)), article %>
+               <div class="panel-body">
+               <strong><%= article.brand.name%></strong></br>
+      </div>
+    </div>
+  <%end%>
+</div>
+
+

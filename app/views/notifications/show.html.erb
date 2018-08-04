@@ -1,0 +1,26 @@
+      <div class="panel panel-default">
+        <div class="panel-header">
+          <%=link_to image_tag(@notification.brand.logo.url(:thumb)), brand_path(@notification.brand.name) %>
+          </div>
+
+
+        <div class="panel-body">
+          <%if @notification.image? %>
+             <%= image_tag @notification.image %>
+          <%end %>
+            <h1><%= @notification.title %></h1>
+            <p><%= @notification.description %></p>
+          </div>
+
+        <div class="panel-footer">
+            <p>by <%= @notification.brand.name %></p>
+            <%= link_to 'Back', :back%>
+            <% if brand_signed_in? %>
+              <%= link_to 'Edit', edit_notification_path(@notification), class: "btn btn-info" %>
+              <%= link_to 'Delete', @notification, method: :delete, data: { confirm: "Are you sure?"},class: "btn btn-danger" %>
+              <%end%>
+          </div>
+    </div>
+
+
+

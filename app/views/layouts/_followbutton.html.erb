@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+    <%if current_user.following?(@brand) == true %>
+    <%= link_to "Unfollow", unfollow_brand_path(@brand), class: 'btn btn-primary' %>
+    <%else %>
+    <%= link_to "Follow", follow_brand_path(@brand),class: 'btn btn-primary' %>
+
+  <% end %>
+<% end %>
+
+

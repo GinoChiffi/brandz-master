@@ -1,0 +1,32 @@
+// Place all the styles related to the designers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#brand_designers_section {
+  display: none;
+}
+
+.designer_profile_pic {
+  float: left;
+  margin-right: 10px;
+}
+
+.designer_profile_name {
+border-bottom: 1px solid #fde9eb;
+margin-left: 10px;
+margin-bottom: 10px;
+text-align: right;
+}
+
+
+
+.designer_profile {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.designer_profile_bio {
+  text-align: justify;
+}
+

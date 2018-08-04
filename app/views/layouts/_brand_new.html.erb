@@ -1,0 +1,11 @@
+<div class="center titles">
+    <h3>Nieuwe Merken</h3>
+    </div>
+
+    <div id="articles" class="transitions-enabled">
+      <% @brands.all.order(created_at: :DESC).each do |brand| %>
+          <div class="box panel panel-default">
+              <%= link_to image_tag(brand.logo.url(:medium)),brand_path(brand.name) %>
+            </div>
+         <%end%>
+       </div>

@@ -1,0 +1,31 @@
+  <div class="jumbotron">
+  <% if brand_signed_in? || user_signed_in? %>
+  <%else%>
+    <p>
+      <%= link_to 'Sign Up', signup_path, class: "btn btn-primary" %>
+      <%= link_to 'Log In', login_path, class: "btn btn-danger" %>
+    </p>
+  <% end %>
+</div>
+
+<H1>Recent Additions</H1>
+
+
+  <% @brands.order("created_at desc").limit(4).each do |brand|%>
+    <div class="card">
+      <%= link_to image_tag(brand.logo.url(:medium)), brand_path(brand.name)%></br>
+      <div class="card-body">
+        <h5 class="card-title"> <%= brand.name %></h5>
+        <p class="card-text"><%= brand.categories %></p>
+      </div>
+    </div>
+  <% end %>
+
+
+
+
+
+
+
+
+

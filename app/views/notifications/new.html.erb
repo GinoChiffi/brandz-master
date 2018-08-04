@@ -1,0 +1,15 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1>New Notification</h1>
+  <div class=" panel panel-default">
+        <div class="panel-heading">
+          <h3>Brand It</h3>
+        </div>
+        <div class="panel-body">
+          <%= render 'form', notification: @notification %>
+        </div>
+      <div class="panel-footer">
+          <%= link_to 'Show', @notification %> |
+          <%= link_to 'Back', :back %>
+      </div>
+  </div>
+</div>

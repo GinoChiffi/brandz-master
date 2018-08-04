@@ -1,0 +1,7 @@
+<h3>Contact: </h3>
+   <strong>Email:</strong> <%= @brand.email %></br>
+   <strong>Phone:</strong> <%= @brand.phone %></br>
+
+<%if @brand.url %>
+   <strong>Website:</strong>  <%= link_to @brand.url, url_for(@brand.url), target: :_blank%></br>
+    <%end%>

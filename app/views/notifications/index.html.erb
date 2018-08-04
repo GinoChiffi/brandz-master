@@ -1,0 +1,24 @@
+  <% current_user.all_following.each do |f| %>
+  <% f.notifications.each do |notification| %>
+      <div class="panel panel-default">
+        <div class="panel-header">
+          <%=link_to image_tag(notification.brand.logo.url(:thumb)), brand_path(f.name) %>
+          </div>
+          <div class="panel-body">
+              <%if notification.image? %>
+                  <%= image_tag notification.image %>
+              <%end %>
+                <h1><%= notification.title %></h1>
+                <p>Posted by: <%= notification.brand.name %> @ <%= notification.created_at %></p>
+                <p><%= notification.description.truncate_words(10) %></p>
+                <%= link_to 'Lees meer', notification %>
+        </div>
+      </div>
+    <% end%>
+  <%end%>
+
+
+
+
+
+
